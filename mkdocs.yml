@@ -1,0 +1,109 @@
+site_name: Physics Beyond Classroom
+site_description: Personal physics notes from three research experiences — the ideas that live between the question and the answer.
+site_author: Physics Beyond Classroom
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: zh
+          name: 中文
+          build: true
+          nav_translations:
+            Home: 首页
+            "1. Foundations": 1. 基础
+            "1.1 Oscillations, Waves, and Resonance": 1.1 振荡、波与共振
+            "1.2 Interference, Standing Waves, and Quantization": 1.2 干涉、驻波与量子化
+            "1.3 Wave Functions and Quantum States": 1.3 波函数与量子态
+            "2. The Hydrogen Frequency Standard": 2. 氢原子频标
+            "2.1 Hydrogen Hyperfine Splitting": 2.1 氢的超精细劈裂
+            "2.2 Spins in a Magnetic Field: Precession and the Zeeman Effect": 2.2 磁场中的自旋：进动与塞曼效应
+            "2.3 How a Hydrogen Maser Works": 2.3 氢原子激射器如何工作
+            "2.4 How Accurate Is an Atomic Clock?": 2.4 原子钟有多准？
+            "3. Semiconductor Spectroscopy": 3. 半导体光谱
+            "3.1 From Levels to Bands: The Bandgap": 3.1 从能级到能带：带隙
+            "3.2 Measuring a Bandgap with Light: The Tauc Plot": 3.2 用光测带隙：Tauc 图
+            "3.3 Sources of Error in Bandgap Measurements": 3.3 带隙测量中的误差来源
+            "4. Gamma-ray Astronomy": 4. 伽马射线天文学
+            "4.1 Gamma-ray Production and Interactions": 4.1 伽马射线的产生与相互作用
+            "4.2 How Fermi-LAT Detects Gamma Rays": 4.2 Fermi-LAT 如何探测伽马射线
+            "4.3 From Gamma-ray Photons to a Point Source": 4.3 从伽马光子到点源
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/derivation.js
+
+nav:
+  - Home: index.md
+  - "1. Foundations":
+      - "1.1 Oscillations, Waves, and Resonance": foundations/oscillations-waves-and-resonance.md
+      - "1.2 Interference, Standing Waves, and Quantization": foundations/interference-standing-waves-and-quantization.md
+      - "1.3 Wave Functions and Quantum States": foundations/wave-functions-and-quantum-states.md
+  - "2. The Hydrogen Frequency Standard":
+      - "2.1 Hydrogen Hyperfine Splitting": hydrogen-frequency-standard/the-hydrogen-atoms-smallest-split.md
+      - "2.2 Spins in a Magnetic Field: Precession and the Zeeman Effect": hydrogen-frequency-standard/spins-in-a-magnetic-field.md
+      - "2.3 How a Hydrogen Maser Works": hydrogen-frequency-standard/from-a-quiet-atom-to-a-ticking-clock.md
+      - "2.4 How Accurate Is an Atomic Clock?": hydrogen-frequency-standard/how-accurate-is-an-atomic-clock.md
+  - "3. Semiconductor Spectroscopy":
+      - "3.1 From Levels to Bands: The Bandgap": semiconductor-spectroscopy/from-levels-to-bands.md
+      - "3.2 Measuring a Bandgap with Light: The Tauc Plot": semiconductor-spectroscopy/measuring-a-bandgap-with-light.md
+      - "3.3 Sources of Error in Bandgap Measurements": semiconductor-spectroscopy/when-experimental-data-misbehaves.md
+  - "4. Gamma-ray Astronomy":
+      - "4.1 Gamma-ray Production and Interactions": gamma-ray-astronomy/gamma-rays-natures-highest-notes.md
+      - "4.2 How Fermi-LAT Detects Gamma Rays": gamma-ray-astronomy/how-fermi-lat-catches-them.md
+      - "4.3 From Gamma-ray Photons to a Point Source": gamma-ray-astronomy/from-gamma-ray-photons-to-a-point-source.md

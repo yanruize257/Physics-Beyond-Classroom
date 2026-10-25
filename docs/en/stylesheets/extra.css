@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Physics Beyond Classroom — custom styles
+   ========================================================================== */
+
+/* Wider, textbook-like content column */
+.md-grid {
+  max-width: 75rem;
+}
+
+.md-content__inner {
+  max-width: 100%;
+}
+
+/* Home page lead paragraph */
+.md-typeset .lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+
+/* --------------------------------------------------------------------------
+   Derivation admonition: a visually distinct, collapsible math-derivation block
+   -------------------------------------------------------------------------- */
+
+/* Icon used by the derivation admonition (Material "function-variant" glyph). */
+:root {
+  --md-admonition-icon--derivation: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12.42%205.29c-1.1-.1-2.07.71-2.17%201.82L10%2010h2.82v2H9.82l-.44%205.07c-.2%202.2-2.14%203.83-4.34%203.83-2.04%200-3.6-1-4.1-2.65l1.89-.7c.27.87%201.14%201.28%202.02%201.28%201.2%200%202.05-.86%202.2-2.1l.48-5.73H4.82v-2h3.01l.32-2.89c.17-2.15%201.89-3.78%204.04-3.78%201.46%200%202.9.55%203.66%201.69l-1.6.95c-.43-.68-1.08-.99-1.83-.72z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.md-typeset .admonition.derivation,
+.md-typeset details.derivation {
+  border-color: #7c4dff;
+}
+
+.md-typeset .derivation > .admonition-title,
+.md-typeset .derivation > summary {
+  background-color: rgba(124, 77, 255, 0.1);
+}
+
+.md-typeset .derivation > .admonition-title::before,
+.md-typeset .derivation > summary::before {
+  background-color: #7c4dff;
+  -webkit-mask-image: var(--md-admonition-icon--derivation);
+  mask-image: var(--md-admonition-icon--derivation);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar hierarchy: chapter titles large, numbered pages smaller
+   -------------------------------------------------------------------------- */
+
+.md-nav__item--section > .md-nav__link {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color);
+}
+
+.md-nav[data-md-level="1"] .md-nav__link {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* --------------------------------------------------------------------------
+   Figures and captions
+   -------------------------------------------------------------------------- */
+
+.md-typeset figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.md-typeset figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* --------------------------------------------------------------------------
+   Wide figures: allow horizontal scrolling on small screens so that the
+   labels of complex diagrams (2.2, 2.3, 4.2) stay at a legible size
+   -------------------------------------------------------------------------- */
+
+.md-typeset .svg-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 599px) {
+  .md-typeset .svg-scroll svg {
+    min-width: 560px;
+  }
+}

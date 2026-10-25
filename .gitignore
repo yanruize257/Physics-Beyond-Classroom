@@ -1,0 +1,45 @@
+# ==========================================================================
+# Physics Beyond Classroom — Git ignore rules
+# ==========================================================================
+
+# MkDocs build output
+site/
+
+# macOS
+.DS_Store
+
+# Python (local tooling / MkDocs)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Private research material (kept out of the repository)
+references/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local
+secrets.*
+config.local.*
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Internal authoring reference (keep out of the public repository)
+writing-guide.md
+
+# Internal authoring / QA documents (kept local only — out of the public
+# repository and out of the share ZIP)
+PROJECT_HANDOFF.md
+FINAL_AUDIT_REPORT.md
+VISUAL_FIX_REPORT.md
